@@ -1,0 +1,10 @@
+{
+	HomePage: "https://desktopgames.com.ua/catalog/boardgames/",
+	DetailsXpath : '//div[@id="catalog"]/div[@class="product"]/a/@href',
+    PaginationXpath : '//div[@class="page_list"]/a/@href',
+
+    HeaderXpath : '//h1/text()'
+    PriceXpath : '//div[@class="price"]/text()'
+    DescriptionXpath : '//div[@id="product_description"]/text() | //div[@id="product_description"]/*/text()'
+    PicturesXpath : '//a[@class="gallery"]/@href'
+}
