@@ -23,7 +23,7 @@ namespace Parser
             List<ParserListItem> parsers = new List<ParserListItem>();
             try
             {
-                ParseArgs(args, ref directory, ref delay);
+                ParseArgs(args, ref directory, ref delay, ref updateDelay);
             }
             catch (Exception ex)
             {
