@@ -9,6 +9,7 @@ using System.Net;
 using Newtonsoft.Json;
 using System.IO;
 using Parser.ParserModels;
+using System.Threading;
 
 namespace Parser
 {
@@ -18,6 +19,7 @@ namespace Parser
         {
             string directory = null;
             TimeSpan? delay = null;
+            TimeSpan? updateDelay = null;
             List<ParserListItem> parsers = new List<ParserListItem>();
             try
             {
@@ -72,15 +74,18 @@ namespace Parser
                     db.Pictures.AddRange(results.AddedPictures);
                     db.SaveChanges();
                 }
+                Thread.Sleep(1000 * 60 * (int)updateDelay.Value.TotalMilliseconds);
             }
         }
 
-        static void ParseArgs(string[] args, ref string directory, ref TimeSpan? delay)
+        static void ParseArgs(string[] args, ref string directory, ref TimeSpan? delay, ref TimeSpan? updateDelay)
         {
             int dI = Array.IndexOf(args, "-d");
             int tI = Array.IndexOf(args, "-t");
+            int uI = Array.IndexOf(args, "-u");
             directory = args[dI + 1];
-            delay = TimeSpan.Parse(args[tI + 1]);
+            delay = TimeSpan.FromHours(double.Parse(args[tI + 1]));
+            updateDelay = TimeSpan.FromMinutes(double.Parse(args[uI + 1]));
         }
     }
 }
