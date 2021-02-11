@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
-namespace Parser
+namespace Parser.ParserModels
 {
-    class ParsingData
+    public class ParsingData
     {
         private List<string> PagesLinks_;
         private List<string> ProductsLinks_;

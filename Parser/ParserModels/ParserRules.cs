@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Parser
+namespace Parser.ParserModels
 {
-    class ParserRules
+    public class ParserRules
     {
         public string HomePage { get; set; }
         public string DetailsXpath { get; set; }
