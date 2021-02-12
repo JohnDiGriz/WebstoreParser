@@ -1,9 +1,10 @@
 # Website Parser
 Parses data from websites using json file as instruction and writes them to SQL server database.
-Parsed data is a list of products with connected pictures and prices. Multiple runs on same website update existing records, including keeping price history
+Parsed data is a list of products with connected pictures and prices. Multiple runs on same website update existing records, including keeping price history.
 
 # Data Format
-Note that Foreign and Primary keys, as well as navigation properties are ommited
+Note that Foreign and Primary keys, as well as navigation properties are ommited.
+
 Product:
 * Url
 * Name
@@ -19,7 +20,8 @@ Picture:
 * Url
 
 # Parser Rules Format
-Parser Rules is json file that contains mapping of ParserRules object. It takes form of series of (mostly) xpathes to various places on webpages, where data for products is stored
+Parser Rules is json file that contains mapping of ParserRules object. It takes form of series of (mostly) xpathes to various places on webpages, where data for products is stored.
+
 Rules:
 * HomePage - Url of page, from which parser starts crawling
 * DetailsXpath - Xpath to get url of product from page
@@ -34,4 +36,4 @@ Rules:
 # Program args
 Program requires three arguments to run: path to directory with parser files (-d %directory%), delay between runs of the same parser (-t %delay in hours%)
 and delay betweem update on the parser directory (-u %update delay in minutes%)
-Program can run indefinately, regularly updating it's parser base
+Program can run indefinately, regularly updating it's parser base.
